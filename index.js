@@ -50,7 +50,9 @@ setInterval(function() {
 
 //-------------------------------------------------------------------------------
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://127.0.0.1:3001'
+}));
 
 app.use(express.json());
 
