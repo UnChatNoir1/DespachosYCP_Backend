@@ -17,6 +17,8 @@ const {
 } = require('./controladores/notificacion.controller.js');
 
 var cors = require('cors');
+const helmet = require('helmet');
+
 const db = require('./db');
 
 db.on('error', (error) => {
@@ -50,9 +52,11 @@ setInterval(function() {
 
 //-------------------------------------------------------------------------------
 
-app.use(cors({
+/*app.use(cors({
   origin: 'https://127.0.0.1:3001'
-}));
+}));*/
+
+app.use(helmet());
 
 app.use(express.json());
 
